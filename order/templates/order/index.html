@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Products</h1>
+<div class="row">
+    {% for soap in soap %}
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img alt="" class="card-img-top" src="{{soap.image_url}}" height="250cm">
+            <div class="card-body">
+                <h5 class="card-title">{{soap.name}}</h5>
+                <p class="card-text">${{soap.price}}</p>
+                <a class="btn btn-primary" href="cart/{{soap.name}}/{{soap.price}}">BUY</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

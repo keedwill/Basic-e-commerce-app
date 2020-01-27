@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+
+{% block content%}
+<div class="card">
+    <div class="card-header">
+        Invoice
+        <strong>{{buyer.date}}</strong>
+        <span class="float-right"> <strong>Status:</strong> Pending</span>
+
+    </div>
+    <div class="card-body">
+        <div class="row mb-4">
+            <div class="col-sm-6">
+                <h6 class="mb-3">From:</h6>
+                <div>
+                    <strong>Prince savon</strong>
+                </div>
+                <div>Madalinskiego 8</div>
+                <div>71-101 Szczecin, Poland</div>
+                <div>Email: princesavon@gmail.com</div>
+                <div>Phone: +8067702441</div>
+            </div>
+
+            <div class="col-sm-6">
+                <h6 class="mb-3">To:</h6>
+                <div>
+                    <strong>{{buyer.first_name}} {{buyer.second_name}}</strong>
+                </div>
+                <div>Attn: owoh princewill</div>
+                <div>Address: {{buyer.address}}</div>
+                <div>Email: {{buyer.email}}</div>
+                <div>Phone: {{buyer.phone_number}}</div>
+            </div>
+
+
+        </div>
+
+        <div class="table-responsive-sm">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th class="center">#</th>
+                    <th>Item</th>
+
+                    <th class="right">Unit Cost</th>
+                    <th class="center">Qty</th>
+                    <th class="right">Total</th>
+                    <th class="right">reference no</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="center">1</td>
+                    <td class="left strong">{{buyer.product_name}}</td>
+
+                    <td class="right">${{buyer.unit_cost}}</td>
+                    <td class="center">{{buyer.no_of_item}}</td>
+                    <td class="right">${{buyer.product_price}}</td>
+                    <td class="right">{{buyer.uuid}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
